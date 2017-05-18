@@ -21,3 +21,7 @@
 .byebug_history
 .idea/*
 .idea
+
+/public/assets/*
+# Ignore application configuration
+/config/application.yml
