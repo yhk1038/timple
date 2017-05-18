@@ -1,14 +1,41 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Timple1</title>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
+    <title><%= app_title %></title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+    <%= render '/layouts/meta/meta_tag_set' %>
 
-  <body>
-    <%= yield %>
-  </body>
+    <!-- T/ Vendor CSS -->
+    <link href="/template/vendors/bower_components/animate.css/animate.min.css" rel="stylesheet">
+    <link href="/template/vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.css" rel="stylesheet">
+    <link href="/template/vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
+    <link href="/template/vendors/bower_components/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet">
+    <link href="/template/vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+    <link href="/template/vendors/bootgrid/jquery.bootgrid.min.css" rel="stylesheet">
+
+    <!-- T/ CSS -->
+    <link href="/template/css/app.min.1.css" rel="stylesheet">
+    <link href="/template/css/app.min.2.css" rel="stylesheet">
+
+    <!-- My Custom Style -->
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+
+    <%= javascript_tag "_TP_ = '#{form_authenticity_token}';" %>
+</head>
+
+<body>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+<%= yield %>
+
+<%= render '/layouts/footer' %>
+
+<%= javascript_include_tag 'application' %>
+</body>
 </html>
