@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     }
     
     root 'util#balancer'
-    get 'util/landing', to: 'util#landing', as: 'landing'
+    get '/landing', to: 'util#landing', as: 'landing'
     get 'util/index', to: 'util#index', as: 'intro'
     get 'timetable/intro', to: 'timetables#intro', as: 'table'
 
