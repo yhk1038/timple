@@ -35,6 +35,7 @@ gem 'omniauth'                  # 디바이스 소셜 계정 인증
 gem 'omniauth-facebook'         # 페이스북 인증
 gem 'omniauth-twitter'          # 트위터 인증
 gem 'omniauth-google-oauth2'    # 구글 인증
+gem 'omniauth-kakao'            # 카카오 인증
 
 gem 'rolify'                # role 관리
 gem 'authority'             # 권한설정

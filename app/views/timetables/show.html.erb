@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Group:</strong>
+  <%= @timetable.group %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @timetable.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @timetable.end_date %>
+</p>
+
+<%= link_to 'Edit', edit_timetable_path(@timetable) %> |
+<%= link_to 'Back', timetables_path %>

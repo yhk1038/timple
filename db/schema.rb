@@ -10,21 +10,80 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170518130327) do
+ActiveRecord::Schema.define(version: 20170518190533) do
+
+  create_table "groups", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "profile_img"
+    t.string   "background_img"
+    t.string   "invite_code"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "marks", force: :cascade do |t|
+    t.integer  "groups_id"
+    t.integer  "timetable_id"
+    t.integer  "user_id"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.boolean  "white_list"
+    t.string   "title"
+    t.text     "content"
+    t.string   "url"
+    t.string   "image"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["groups_id"], name: "index_marks_on_groups_id"
+    t.index ["timetable_id"], name: "index_marks_on_timetable_id"
+    t.index ["user_id"], name: "index_marks_on_user_id"
+  end
+
+  create_table "timetables", force: :cascade do |t|
+    t.integer  "group_id"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.datetime "start_day_time"
+    t.datetime "end_day_time"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["group_id"], name: "index_timetables_on_group_id"
+  end
+
+  create_table "userlists", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_userlists_on_group_id"
+    t.index ["user_id"], name: "index_userlists_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                  default: "",          null: false
+    t.string   "encrypted_password",     default: "",          null: false
+    t.boolean  "admin",                  default: false,       null: false
+    t.boolean  "active",                 default: true,        null: false
+    t.integer  "role",                   default: 1,           null: false
+    t.integer  "point",                  default: 0,           null: false
+    t.string   "nickname",               default: "Anonymous", null: false
+    t.datetime "birthday"
+    t.string   "name"
+    t.string   "image"
+    t.string   "img"
+    t.string   "provider"
+    t.string   "uid"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,           null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -6,7 +6,7 @@
     <meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>XBrain | Machine Learning For All</title>
+    <title>Timple | 약속을 공유하는 가장 쉬운 방법</title>
     <meta name="author" content="XBrain">
     <meta name="description" content="">
 
@@ -26,9 +26,9 @@
             <div class="logo"></div>
             <div class="menu">
                 <a class="menu-item din-reg" href="#product">Product</a>
-                <a class="menu-item din-reg" href="#support">Support</a>
+                <a class="menu-item din-reg" href="#support">Point</a>
                 <a class="menu-item din-reg" href="#team">Team</a>
-                <a class="menu-item button din-reg" href="">Sign Up</a>
+                <a class="menu-item button din-reg" href="<%= intro_path %>">Sign Up</a>
             </div>
         </div>
     </div>
@@ -36,12 +36,14 @@
     <div class="block intro">
         <div class="content">
             <div class="subblock intro-info">
-                <h1 class="title din-light">Easy-to-use Machine-Learning for all</h1>
-                <p class="text din-light">Harness the power of machine-learning for your business or research with a simple interface so you can focus on what matters.</p>
+                <h1 class="title din-light">약속을 공유하는<br>가장 쉬운 방법</h1>
+                <p class="text din-light">스트레스 받아가며 일일이 시간 맞출 필요 없이<br>드래그로 쉽게, 빠르게, 정확하게 약속을 공유하자!</p>
 
-                <a class="button din-light" href="">Sign Up For Beta</a>
+                <a class="button din-light" href="<%= intro_path %>">Sign Up For Beta</a>
             </div>
-            <div class="subblock intro-img"></div>
+            <div class="subblock">
+                <img src="/img/landing-first-calendar.png" width="400" height="400" style="padding: 100px 0 100px 200px">
+            </div>
         </div>
 
         <img class="bg-white" src="/landing/bg-owhite-up.svg">
@@ -52,31 +54,31 @@
             <div class="subblock product-info">
                 <div class="product-intro">
                     <span class="label">Product</span>
-                    <h1 class="title din-light">Meet Alice</h1>
+                    <h1 class="title din-light">팀플(Timple)을<br>지금 만나보세요!</h1>
                     <p class="text din-light">Alice is a cloud-based Machine Learning assistant that helps developers and data scientists to build and deploy machine learning models.</p>
                 </div>
 
                 <div class="product-item pi-1 active">
                     <div class="icon"></div>
                     <div class="item">
-                        <h2 class="subtitle din-reg">Intuitive Data Cleansing & Analysis</h2>
-                        <p class="text din-light">Understand and prepare your datasets with Alice's Data Cleansing features.</p>
+                        <h2 class="subtitle din-reg">1. 약속이 가능한 시간을 겹쳐볼 수 있습니다.</h2>
+                        <p class="text din-light">캘린더로 멤버들을 초대하고, 한 번의 드래그로 빠르게 약속을 잡아보세요. 약속 결정을 도와줄 다양한 기능들이 준비되어 있습니다</p>
                     </div>
                 </div>
 
                 <div class="product-item pi-2">
                     <div class="icon"></div>
                     <div class="item">
-                        <h2 class="subtitle din-reg">Robust Automated Machine Learning</h2>
-                        <p class="text din-light">Alice does the heavy lifting in fine-tuning your model so you can focus on your work.</p>
+                        <h2 class="subtitle din-reg">2. 다가오는 약속을 자동으로 알려드립니다.</h2>
+                        <p class="text din-light">약속은 다가오지만 먼저 말을 꺼내기는 힘들다면, 약속 자동 알림 기능은 당신의 대안이 될 것 입니다</p>
                     </div>
                 </div>
 
                 <div class="product-item pi-3">
                     <div class="icon"></div>
                     <div class="item">
-                        <h2 class="subtitle din-reg">Simple API Integration</h2>
-                        <p class="text din-light">Easily integrate your machine learning models in minutes with RESTful API.</p>
+                        <h2 class="subtitle din-reg">3. 관련된 자료들은 바로 모아보세요</h2>
+                        <p class="text din-light">필요한 자료들을 캘린더에 모아두면, 더 깔끔해진 파일 관리를 경험할 수 있습니다!</p>
                     </div>
                 </div>
 
@@ -84,18 +86,19 @@
             </div>
 
 
-            <div class="subblock product-img">
+            <div class="subblock product-img" style="width: 100%;">
 
-                <!-- 			Examples of still image, gif version, or video -->
+                <!-- Examples of still image, gif version, or video -->
 
-                <!-- 			<img class="bg-product" src="img/product5.png"> -->
+                <img class="bg-product" src="/landing/main_img.svg">
+                <!--<img class="bg-product" src="/img/landing-third-calendar.png" width="200" height="200">-->
+                <!--<img class="bg-product" src="/img/landing-fourth-upload.png" width="200" height="200">-->
 
-                <!--			<img class="bg-product" src="img/product-gif.gif"> -->
-
-                <video class="bg-product" autoplay loop>
-                    <source src="http://www.xbrain.team/img/product-vid2.mp4" type="video/mp4">
-                    Your browser doesn't support HTML5 video tag.
-                </video>
+                <!--<video class="bg-product">-->
+                    <!--&lt;!&ndash;&nbsp;&ndash;&gt;-->
+                    <!--<source src="http://www.xbrain.team/img/product-vid2.mp4" type="video/mp4">-->
+                    <!--Your browser doesn't support HTML5 video tag.-->
+                <!--</video>-->
 
 
 
@@ -115,9 +118,9 @@
     <div class="block support" id="support">
         <div class="content">
             <div class="subblock support-info">
-                <span class="label">Support</span>
-                <h1 class="title din-light">Still need help?</h1>
-                <p class="text din-light">Do not worry if you have zero knowledge in Machine Learning. XBrain provides the right resource to support your experience with Alice.</p>
+                <span class="label">Point</span>
+                <h1 class="title din-light">팀플(Timple)로 <br>팀플하기 좋은 이유</h1>
+                <p class="text din-light">팀플(Timple)은 <br>'업무'에 기반을 둔 기존 솔루션들과 다르게, <br>'약속'과 '시간'에 기반을 둔 대안 솔루션 입니다.</p>
 
 
             </div>
@@ -155,49 +158,41 @@
             <div class="subblock team-info">
                 <span class="label">Team</span>
             </div>
-            <div class="subblock team-items">
-                <div class="team-item jinyoung-choi" onclick="window.open('https://kr.linkedin.com/in/jinyoung-choi-4b36602b', 'mywindow');" style="cursor: pointer;">
+            <div class="subblock team-items" style="text-align: center;width: 100%;padding: 0 10%;">
+
+                <div class="team-item inhye-sim" onclick="" style="cursor: pointer;">
                     <div class="img"></div>
                     <div class="scrim"></div>
                     <div class="item">
-                        <h2 class="subtitle din-reg">Jinyoung Choi</h2>
-                        <p class="text din-reg">Chief Executive Officer</p>
+                        <h2 class="subtitle din-reg">심인혜</h2>
+                        <p class="text din-reg">총대를 멘 자</p>
                     </div>
                 </div>
 
-                <div class="team-item jongmin-kim" onclick="window.open('https://kr.linkedin.com/in/jongmin-kim-b46b1289/en', 'mywindow');" style="cursor: pointer;">
+                <div class="team-item yonghyun-kim" onclick="" style="cursor: pointer;">
                     <div class="img"></div>
                     <div class="scrim"></div>
                     <div class="item">
-                        <h2 class="subtitle din-reg">Jongmin Kim</h2>
-                        <p class="text din-reg">Lead Software Engineer</p>
+                        <h2 class="subtitle din-reg">김용현</h2>
+                        <p class="text din-reg">개발을 하는 자</p>
                     </div>
                 </div>
 
-                <div class="team-item jongheon-jeong" onclick="window.open('https://kr.linkedin.com/in/jongheonj/en', 'mywindow');" style="cursor: pointer;">
+                <div class="team-item jeongbum-kim" onclick="" style="cursor: pointer;">
                     <div class="img"></div>
                     <div class="scrim"></div>
                     <div class="item">
-                        <h2 class="subtitle din-reg">Jongheon Jeong</h2>
-                        <p class="text din-reg">Head of Research</p>
+                        <h2 class="subtitle din-reg">김정범</h2>
+                        <p class="text din-reg">디자인을 만드는 자</p>
                     </div>
                 </div>
 
-                <div class="team-item anthony-cha" onclick="window.open('https://www.linkedin.com/in/anthonycha/en', 'mywindow');" style="cursor: pointer;">
+                <div class="team-item donghyung-jeong" onclick="" style="cursor: pointer;">
                     <div class="img"></div>
                     <div class="scrim"></div>
                     <div class="item">
-                        <h2 class="subtitle din-reg">Anthony Cha</h2>
-                        <p class="text din-reg">Product Manager</p>
-                    </div>
-                </div>
-
-                <div class="team-item daehyun-kim" onclick="window.open('https://kr.linkedin.com/in/daehyun-kim-6561b811a/en', 'mywindow');" style="cursor: pointer;">
-                    <div class="img"></div>
-                    <div class="scrim"></div>
-                    <div class="item">
-                        <h2 class="subtitle din-reg">Daehyun Kim</h2>
-                        <p class="text din-reg">Software Engineer</p>
+                        <h2 class="subtitle din-reg">정동형</h2>
+                        <p class="text din-reg">기획을 하는 자</p>
                     </div>
                 </div>
 
@@ -242,20 +237,21 @@
         <div class="content">
             <div class="footer-line">
                 <div class="logo"></div>
-                <p class="copyright din-light"> ©2016 XBrain Inc. All rights reserved</p>
+                <p class="copyright din-light"> ©2017 Timple Inc. All rights reserved</p>
             </div>
             <div class="footer-info">
                 <div class="info">
-                    <h3 class="subtitle din-reg">Headquarter</h3>
-                    <p class="text din-light">46 Sungmisan-ro 1-gil,<br>Mapo-gu,<br>Seoul, Korea</p>
+                    <h3 class="subtitle din-reg">소재지</h3>
+                    <p class="text din-light">경기도 수원시 영통구,<br>이의동 861-2,<br>광교 테크노벨리</p>
+                    <!--<p class="text din-light">46 Sungmisan-ro 1-gil,<br>Jung-gu,<br>Seoul, Korea</p>-->
                 </div>
                 <div class="info">
-                    <h3 class="subtitle din-reg">R&D Labs</h3>
-                    <p class="text din-light">#102 77 Chungam-ro,<br>Pohang-si,<br>Gyungsangbuk-do, Korea</p>
+                    <h3 class="subtitle din-reg">발전소</h3>
+                    <p class="text din-light">제 6 회<br>단국대학교 집현전 해커톤<br>조명 : 팀플 (Timple)</p>
                 </div>
                 <div class="info">
                     <h3 class="subtitle din-reg">Contact</h3>
-                    <p class="text din-light">+82 70 8820 7277<br><a href="">info@xbrain.team</a></p>
+                    <p class="text din-light">+82 10 2482 4541<br><a href="">info@timple.team</a></p>
                 </div>
             </div>
         </div>

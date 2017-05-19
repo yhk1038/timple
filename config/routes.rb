@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
     
     devise_for :users, controllers: {
-            sessions: 'users/sessions'
+            sessions: 'users/sessions',
+            registrations: 'users/registrations',
+            confirmations: 'users/confirmations',
+            passwords: 'users/passwords',
+            omniauth_callbacks: 'users/omniauth_callbacks'
     }
     
-    root 'util#landing'
-    get 'util/index'
+    root 'util#balancer'
+    get 'util/landing', to: 'util#landing', as: 'landing'
+    get 'util/index', to: 'util#index', as: 'intro'
     get 'timetable/intro', to: 'timetables#intro', as: 'table'
 
     resources :groups do

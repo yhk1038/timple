@@ -23,7 +23,7 @@
     <link href="/template/css/app.min.2.css" rel="stylesheet">
 
     <!-- My Custom Style -->
-    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= javascript_tag "_TP_ = '#{form_authenticity_token}';" %>
 </head>
@@ -31,11 +31,32 @@
 <body>
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
+<%= render '/layouts/parts/navbar' %>
 
 <%= yield %>
 
 <%= render '/layouts/footer' %>
 
+<!-- Javascript Libraries -->
+<script src="/template/vendors/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="/template/vendors/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<script src="/template/vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="/template/vendors/bower_components/Waves/dist/waves.min.js"></script>
+<script src="/template/vendors/bootstrap-growl/bootstrap-growl.min.js"></script>
+<script src="/template/vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.min.js"></script>
+<script src="/template/vendors/bower_components/moment/min/moment.min.js"></script>
+<script src="/template/vendors/bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
+
+<!-- Placeholder for IE9 -->
+<!--[if IE 9 ]>
+<script src="/template/vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+<![endif]-->
+
 <%= javascript_include_tag 'application' %>
+
+<script src="/template/js/functions.js"></script>
+<script src="/template/js/demo.js"></script>
+
 </body>
 </html>

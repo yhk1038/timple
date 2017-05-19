@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  group: one
+  start_date: 2017-05-19 04:05:33
+  end_date: 2017-05-19 04:05:33
+
+two:
+  group: two
+  start_date: 2017-05-19 04:05:33
+  end_date: 2017-05-19 04:05:33

@@ -234,12 +234,15 @@ ul li {
     display: block;
     float: left;
     padding-top: 4px;
-    width: 100px;
-    height: 20px;
+    width: 120px;
+    height: 25px;
+    cursor: pointer;
     background-repeat: no-repeat;
     background-position: left center;
-    background-size: 92px;
-    background-image: url("../img/logo-new3.svg"); }
+    background-size: cover;
+    background-image: url("/img/logo-white.png"); }
+.nav .logo:hover {
+    background-image: url('/img/logo.png'); }
 .nav .menu {
     float: right; }
 .nav .menu-item {
@@ -262,7 +265,7 @@ ul li {
 
 .nav.shazam {
     position: fixed;
-    background-color: #262B38; }
+    background-color: #365c89; }
 .nav.shazam .content {
     padding: 10px 0; }
 .nav.shazam .logo {
@@ -279,7 +282,7 @@ ul li {
 
 .intro {
     position: relative;
-    background-color: #262B38;
+    background-color: #365c89;
     padding: 80px 40px;
     height: 140vh;
     min-height: 800px;
@@ -532,7 +535,7 @@ ul li {
 .team {
     position: relative;
     padding: 20px 40px;
-    background-color: #262B38;
+    background-color: #365c89;
     margin-top: -300px;
     background-image: url("../img/bg-iso10.png");
     background-size: 100px auto;
@@ -610,7 +613,7 @@ ul li {
     height: 20%;
     background-size: auto 100%;
     background-repeat: repeat-x;
-    background-image: url("../img/bg-scrim.png"); }
+    background-image: url("/img/bg-scrim.png"); }
 .team .team-item .item {
     position: absolute;
     bottom: 15px;
@@ -633,22 +636,22 @@ ul li {
     opacity: 0; }
 .team .team-item:last-child {
     margin-right: 0; }
-.team .jinyoung-choi {
-    background-image: url("../img/team/jinyoung-choi.png"); }
-.team .jinyoung-choi .img {
-    background-image: url("../img/team/jinyoung-choi-ds.png"); }
-.team .jongmin-kim {
-    background-image: url("../img/team/jongmin-kim.png"); }
-.team .jongmin-kim .img {
-    background-image: url("../img/team/jongmin-kim-ds.png"); }
-.team .jongheon-jeong {
-    background-image: url("../img/team/jongheon-jeong.png"); }
-.team .jongheon-jeong .img {
-    background-image: url("../img/team/jongheon-jeong-ds.png"); }
-.team .anthony-cha {
-    background-image: url("../img/team/anthony-cha.png"); }
-.team .anthony-cha .img {
-    background-image: url("../img/team/anthony-cha-ds.png"); }
+.team .inhye-sim {
+    background-image: url("/img/team/siminhye.jpeg"); }
+.team .inhye-sim .img {
+    background-image: url("/img/team/siminhye.jpeg"); }
+.team .yonghyun-kim {
+    background-image: url("/img/team/kimyonghyun.jpeg"); }
+.team .yonghyun-kim .img {
+    background-image: url("/img/team/kimyonghyun.jpeg"); }
+.team .jeongbum-kim {
+    background-image: url("/img/team/kimjeongbum.jpeg"); }
+.team .jeongbum-kim .img {
+    background-image: url("/img/team/kimjeongbum.jpeg"); }
+.team .donghyung-jeong {
+    background-image: url("/img/team/jeongdonghyung.jpeg"); }
+.team .donghyung-jeong .img {
+    background-image: url("/img/team/jeongdonghyung.jpeg"); }
 .team .daehyun-kim {
     background-image: url("../img/team/daehyun-kim.png"); }
 .team .daehyun-kim .img {
@@ -700,7 +703,7 @@ ul li {
 .footer {
     position: relative;
     padding: 60px 40px;
-    background-color: #1e222c;
+    background-color: #254560;
     background-image: url("../img/bg-iso10.png");
     background-size: 100px auto;
     background-position: left top; }
