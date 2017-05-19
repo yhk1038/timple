@@ -1,35 +1,25 @@
-<p id="notice"><%= notice %></p>
+<section id="groups_page">
+    <div class="">
+        <div class="col-xs-4 col-md-3 bgm-lightblue" style="padding: 50px 5px 15px; position: fixed; height: 100%;">
+            <div class="zone">
+                <div class="my-profile-image" style="background-image: url(<%= current_user.img %>)">
+                    <span><%= current_user.name %></span>
+                </div>
+            </div>
+            <ul class="zone">
+                <li class="active">참여중인 그룹</li>
+                <li>공유된 요청</li>
+                <li>자료 보관함</li>
+            </ul>
+        </div>
+        <div id="groups_container" class="col-xs-offset-4 col-xs-8 col-md-offset-3 col-md-9">
+            <div class="">
+                <%= render partial: '/groups/partials/group_card', locals: {add_mode: true} %>
 
-<h1>Groups</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Profile img</th>
-      <th>Background img</th>
-      <th>Invite code</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @groups.each do |group| %>
-      <tr>
-        <td><%= group.name %></td>
-        <td><%= group.description %></td>
-        <td><%= group.profile_img %></td>
-        <td><%= group.background_img %></td>
-        <td><%= group.invite_code %></td>
-        <td><%= link_to 'Show', group %></td>
-        <td><%= link_to 'Edit', edit_group_path(group) %></td>
-        <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Group', new_group_path %>
+                <% unless @groups.count.zero? %>
+                    <%= render partial: '/groups/partials/group_card', collection: @groups, as: :group, locals: {add_mode: false} %>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</section>

@@ -3,7 +3,7 @@ class UtilController < ApplicationController
     
     def balancer
         if user_signed_in?
-            redirect_to table_path
+            redirect_to groups_path
         else
             redirect_to landing_path
         end

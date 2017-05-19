@@ -1,3 +1,128 @@
 // Place all the styles related to the groups controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#groups_page{
+  margin-top: 72px !important;
+}
+
+#group_card-add{
+  opacity: 0.75;
+
+  .zmdi {
+    color: #fff;
+    font-size: 80px;
+
+    &:hover{
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  &:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000;
+    opacity: 0.75;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  #group-add_btn{
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    font-style: italic;
+    top: 80px;
+  }
+}
+
+#groups_container{
+  padding: 40px;
+
+  .card-in-group{
+    width: 275px;
+    height: 275px;
+    background: #000;
+    border-radius: 3px;
+    position: relative;
+    display: inline-block;
+    margin: 10px 10px 20px;
+
+    &.card-white{
+      background: #FFFFFF;
+    }
+
+    .updated_at_msg{
+      position: relative;
+      float: right;
+      bottom: -100px;
+      font-size: 12px;
+      color: #b3b3b3;
+    }
+  }
+}
+
+
+/*
+ * 좌측 사이드 바
+ */
+
+.zone{
+  width: 100%;
+  text-align: center;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(240, 240, 240, 0.75);
+  padding-left: 0;
+
+  li{
+    text-transform: capitalize;
+    list-style: none;
+    text-align: left;
+    color: #FFFFFF;
+    font-size: 13px;
+    padding: 10px 20px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 3px;
+    font-weight: bold;
+
+    &.active{
+      background-color: #0c7cd5;
+    }
+
+    &:first-child{
+      margin-top: 15px;
+    }
+
+    &:hover{
+      background-color: #0a68b4;
+    }
+  }
+
+  .my-profile-image{
+    width: 100px;
+    height: 100px;
+    border: 1px solid #f0f0f0;
+    border-radius: 100%;
+    margin: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: #B3B3B3;
+    margin-bottom: 25px;
+
+    span{
+      color: #fff;
+      font-size: 20px;
+      font-weight: bold;
+      top: 100px;
+      position: relative;
+    }
+  }
+}

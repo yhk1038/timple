@@ -1,0 +1,24 @@
+<% if add_mode %>
+    <!-- 그룹 플러스 카드 템플릿 -->
+    <div id="group_card-add" class="card card-in-group card-white">
+        <div class="card-header bgm-white">
+            <h2>&nbsp;<small>&nbsp;</small></h2>
+        </div>
+        <div class="card-body card-padding"></div>
+        <a id="group-add_btn" href="<%= table_path %>"><span class="zmdi zmdi-plus-circle"></span><br>새로운 그룹을 개설합니다.</a>
+    </div>
+<% else %>
+    <!-- 그룹 일반 카드 템플릿 -->
+    <div id="group_card-<%= group.id %>" class="card card-in-group card-white">
+        <%= link_to group_path(group) do %>
+            <div class="card-header bgm-indigo">
+                <h2><%= group.name ? group.name : '이름 없는 모임' %><small><span class="zmdi zmdi-grid"></span> since <%= group.created_at.strftime('%F') %></small></h2>
+            </div>
+            <div class="card-body card-padding">
+                <%= group.description %>
+
+                <span class="updated_at_msg">Updated at <%= distance_of_time_in_words(DateTime.now, group.updated_at) %> before</span>
+            </div>
+        <% end %>
+    </div>
+<% end %>

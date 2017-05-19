@@ -1,5 +1,13 @@
 $(document).ready(function () {
     console.log('loaded!');
+    $('#code_g').click(function () {
+        $(this).hide();
+        $('#code_m').fadeIn();
+    });
+    $('#code_m a').click(function () {
+        $('#code_m').hide();
+        $('#code_g').fadeIn();
+    });
 
     $('.time_cell').mousedown(function () {
         console.log($(this).attr('id'));
@@ -14,7 +22,7 @@ $(document).ready(function () {
         // 드래그 시작점을 이탈하고,
         // 드래그를 지속하는 단계를 통제한다.
         $('.time_cell.'+weekday()).mouseenter(function () {
-            leave_cell($(this));
+            enter_cell($(this));
         });
     });
 
@@ -33,6 +41,7 @@ function startDrag(cell) {
 function first_pressed(cell) {
     cell.addClass('active');
     weekday_ = cell.data('weekday');
+    countPlus(cell, cell.val());
 }
 
 function table_edit_mode(mode) {
@@ -46,11 +55,12 @@ function table_edit_mode(mode) {
     }
 }
 
-function leave_cell(cell) {
+function enter_cell(cell) {
     var table_mode = $('#table').data('mode');
 
     if (table_mode === 'edit-mode') {
         cell.addClass('active');
+        countPlus(cell, cell.val());
     }
 }
 
@@ -60,6 +70,15 @@ function stop(event) {
     event.stopPropagation();
 }
 
+function countPlus(cell, count) {
+    if (count.length === 0){
+        count = 0;
+    }
+    count = parseInt(count) + 1;
+    cell.text(count);
+}
+
 function weekday() {
     return weekday_
 }
+

@@ -6,6 +6,7 @@ class User < ApplicationRecord
            :omniauthable, :omniauth_providers => [:facebook, :twitter, :google_oauth2, :kakao]
 
     has_many :groups, through: :userlists
+    has_many :userlists, dependent: :destroy
     has_many :marks, dependent: :destroy
 
     # def fandom_lists

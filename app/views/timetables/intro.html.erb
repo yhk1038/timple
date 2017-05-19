@@ -361,10 +361,36 @@
 <section id="timetable">
     <div class="container">
         <div class="row">
+            <div class="col-sm-6">
+                <h2 style="font-weight: bold;">김용현님이 생성한 테이블<br>
+                    <small style="font-size: 14px; font-weight: bold; color: #777">단국대학교 집현전 해커톤 화이팅!</small>
+                </h2>
+            </div>
+            <div class="col-sm-6">
+                <!-- Single button -->
+                <div class="btn-group pull-right" style="margin-top: 30px;margin-bottom: 9px;">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        more <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu pull-right" role="menu">
+                        <li><a href="#">테이블 상세 설정</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li><a class="bgm-red" href="#" style="color: #FFFFFF;">테이블 삭제하기</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-8">
                 <div class="card">
                     <table id="table" class="table table-bordered">
                         <thead class="header">
+                        <tr>
+                            <% today = Date.today %>
+                            <th class="day day_head" colspan="8"><%= today.strftime('%Y년 %m월') %> : <%= today.beginning_of_week.day %>일 ~ <%= today.end_of_week.day %>일</th>
+                        </tr>
                         <tr>
                             <% weekdays.each do |weekday| %>
                                 <th class="day day_head <%= weekday[:en] %>"><%= weekday[:ko] %></th>
@@ -384,17 +410,31 @@
                 </div>
             </div>
             <div class="col-md-4">
+
                 <div class="card">
                     <div class="card-header bgm-indigo">
                         <h2>참여중인 사람
                             <small>
                                 <span class="label label-success">심인혜</span>
-                                <span class="label label-success">김용현</span>
+                                <span class="label label-warning">김용현</span>
                             </small>
                         </h2>
                     </div>
                     <div class="card-body card-padding">
                         <h2></h2>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header bgm-indigo">
+                        <h2>테이블 초대 전용 코드
+                            <small>전용 코드를 통해 지인을 초대하세요<br>더욱 빠른 참여와 동시에, 개인정보의 유출을 방지할 수 있습니다</small>
+                        </h2>
+                    </div>
+                    <div class="card-body card-padding">
+                        <a id="code_g" href="#" class="btn btn-default bgm-pink w-100">전용 코드 발급 받기</a>
+                        <span id="code_m" style="display: none"><%= SecureRandom.hex(16) %>
+                            <a href="#" class="btn btn-default btn-sm bgm-red" onclick="return false;">숨겨두기</a></span>
                     </div>
                 </div>
             </div>
