@@ -388,8 +388,24 @@
                     <table id="table" class="table table-bordered">
                         <thead class="header">
                         <tr>
+                            <th class="day day_head" style="padding: 0;">
+                                <a href="#" class="btn btn-default waves-effect" onclick="return false;">
+                                    <span class="zmdi zmdi-chevron-left"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <span class="zmdi zmdi-chevron-right"></span>
+                                </a>
+                            </th>
                             <% today = Date.today %>
-                            <th class="day day_head" colspan="8"><%= today.strftime('%Y년 %m월') %> : <%= today.beginning_of_week.day %>일 ~ <%= today.end_of_week.day %>일</th>
+                            <th class="day day_head" colspan="6"><%= today.strftime('%Y년 %m월') %> : <%= today.beginning_of_week.day %>일 ~ <%= today.end_of_week.day %>일</th>
+                            <th class="day day_head" style="padding: 0;">
+                                <select name="" id="" style="color: #000; font-size: 10px;">
+                                    <option value="0">하루 길이 설정</option>
+                                    <% i=0; time_ranges.each do |time| %>
+                                        <% i += 1 %>
+                                        <% next if time.length < 2 %>
+                                        <option value="<%= i %>"><%= time %></option>
+                                    <% end %>
+                                </select>
+                            </th>
                         </tr>
                         <tr>
                             <% weekdays.each do |weekday| %>
@@ -411,18 +427,134 @@
             </div>
             <div class="col-md-4">
 
+                <div class="card rating-list">
+                    <div class="listview">
+                        <div class="lv-header bgm-indigo">
+                            <div class="m-t-5" style="color: #FFFFFF; font-weight: bold;">
+                                되는 시간 ** 1위 **<br><br>2017-05-20 / 13:00 ~ 15:00<br><br>
+                            </div>
+
+                            <div class="clearfix"></div>
+
+                            <div class="rl-star">
+                                <span style="color: #FFFFFF;">4명</span>
+                                <i class="zmdi zmdi-star active"></i>
+                                <i class="zmdi zmdi-star active"></i>
+                                <i class="zmdi zmdi-star active"></i>
+                                <i class="zmdi zmdi-star active"></i>
+                                <i class="zmdi zmdi-star"></i>
+                                <span style="color: #FFFFFF;">총 5명</span>
+                            </div>
+                            <span style="color: #FFFFFF;">김용현, 심인혜, 김정범, 정동형</span>
+                            <br><br>
+                        </div>
+
+                        <div class="lv-body">
+                            <div class="p-15">
+                                <div class="lv-item">
+                                    <div class="media">
+                                        <div class="pull-left">
+                                            1위 <i class="zmdi zmdi-star"></i>
+                                        </div>
+
+                                        <div class="pull-right" style="font-weight: bold;">4명</div>
+
+                                        <div class="media-body">
+                                            <div class="progress">
+                                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="lv-item">
+                                    <div class="media">
+                                        <div class="pull-left">
+                                            2위 <i class="zmdi zmdi-star"></i>
+                                        </div>
+
+                                        <div class="pull-right" style="font-weight: bold;">3명</div>
+
+                                        <div class="media-body">
+                                            <div class="progress">
+                                                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="lv-item">
+                                    <div class="media">
+                                        <div class="pull-left">
+                                            3위 <i class="zmdi zmdi-star"></i>
+                                        </div>
+
+                                        <div class="pull-right" style="font-weight: bold;">2명</div>
+
+                                        <div class="media-body">
+                                            <div class="progress">
+                                                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="lv-item">
+                                    <div class="media">
+                                        <div class="pull-left">
+                                            4위 <i class="zmdi zmdi-star"></i>
+                                        </div>
+
+                                        <div class="pull-right" style="font-weight: bold;">1명</div>
+
+                                        <div class="media-body">
+                                            <div class="progress">
+                                                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="lv-item">
+                                    <div class="media">
+                                        <div class="pull-left">
+                                            4위 <i class="zmdi zmdi-star"></i>
+                                        </div>
+
+                                        <div class="pull-right" style="font-weight: bold;">1명</div>
+
+                                        <div class="media-body">
+                                            <div class="progress">
+                                                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="card">
                     <div class="card-header bgm-indigo">
                         <h2>참여중인 사람
                             <small>
                                 <span class="label label-success">심인혜</span>
                                 <span class="label label-warning">김용현</span>
+                                <span class="label label-success">김정범</span>
+                                <span class="label label-info">정동형</span>
+                                <span class="label label-danger">위상아</span>
                             </small>
                         </h2>
                     </div>
-                    <div class="card-body card-padding">
-                        <h2></h2>
-                    </div>
+                    <!--<div class="card-body card-padding">-->
+                        <!---->
+                    <!--</div>-->
                 </div>
 
                 <div class="card">
@@ -433,7 +565,7 @@
                     </div>
                     <div class="card-body card-padding">
                         <a id="code_g" href="#" class="btn btn-default bgm-pink w-100" onclick="return false;">전용 코드 발급 받기</a>
-                        <span id="code_m" style="display: none"><%= SecureRandom.hex(16) %>
+                        <span id="code_m" style="display: none"><%= SecureRandom.hex(16) %> &nbsp;&nbsp;&nbsp;
                             <a href="#" class="btn btn-default btn-sm bgm-red" onclick="return false;">숨겨두기</a></span>
                     </div>
                 </div>
