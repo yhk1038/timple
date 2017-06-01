@@ -348,6 +348,7 @@
 
     time_ranges = []
     range_hour = (start_hour .. end_hour).to_a * 2
+    range_hour = range_hour.count.zero? ? (5..23).to_a * 2 : range_hour
     half = false
     range_hour.sort.each do |hour|
         time_ = half ? '' : "#{hour}:00"
