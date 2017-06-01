@@ -1,31 +1,620 @@
-<p id="notice"><%= notice %></p>
+<div class="fc-view-container" style="display: none;">
+    <div class="fc-view fc-agendaWeek-view fc-agenda-view">
+        <table>
+            <thead class="fc-head">
+            <tr>
+                <td class="ui-widget-header">
+                    <div class="fc-row ui-widget-header" style="border-right-width: 1px; margin-right: 14px;">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th class="fc-axis ui-widget-header" style="width: 39px;"></th>
+                                <th class="fc-day-header ui-widget-header fc-sun">Sun 5/14</th>
+                                <th class="fc-day-header ui-widget-header fc-mon">Mon 5/15</th>
+                                <th class="fc-day-header ui-widget-header fc-tue">Tue 5/16</th>
+                                <th class="fc-day-header ui-widget-header fc-wed">Wed 5/17</th>
+                                <th class="fc-day-header ui-widget-header fc-thu">Thu 5/18</th>
+                                <th class="fc-day-header ui-widget-header fc-fri">Fri 5/19</th>
+                                <th class="fc-day-header ui-widget-header fc-sat">Sat 5/20</th>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            </thead>
+            <tbody class="fc-body">
+            <tr>
+                <td class="ui-widget-content">
+                    <div class="fc-day-grid">
+                        <div class="fc-row fc-week ui-widget-content" style="border-right-width: 1px; margin-right: 14px;">
+                            <div class="fc-bg">
+                                <table>
+                                    <tbody>
+                                    <tr>
+                                        <td class="fc-axis ui-widget-content" style="width: 39px;"><span>all-day</span></td>
+                                        <td class="fc-day ui-widget-content fc-sun fc-past" data-date="2017-05-14"></td>
+                                        <td class="fc-day ui-widget-content fc-mon fc-past" data-date="2017-05-15"></td>
+                                        <td class="fc-day ui-widget-content fc-tue fc-past" data-date="2017-05-16"></td>
+                                        <td class="fc-day ui-widget-content fc-wed fc-past" data-date="2017-05-17"></td>
+                                        <td class="fc-day ui-widget-content fc-thu fc-past" data-date="2017-05-18"></td>
+                                        <td class="fc-day ui-widget-content fc-fri fc-today ui-state-highlight" data-date="2017-05-19"></td>
+                                        <td class="fc-day ui-widget-content fc-sat fc-future" data-date="2017-05-20"></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="fc-content-skeleton">
+                                <table>
+                                    <tbody>
+                                    <tr>
+                                        <td class="fc-axis" style="width:39px"></td>
+                                        <td></td>
+                                        <td class="fc-event-container">
+                                            <a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end bgm-cyan fc-draggable fc-resizable">
+                                                <div class="fc-content"> <span class="fc-title">Live TV Show</span></div>
+                                                <div class="fc-resizer fc-end-resizer"></div>
+                                            </a>
+                                        </td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="fc-event-container">
+                                            <a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end bgm-amber fc-draggable fc-resizable">
+                                                <div class="fc-content"> <span class="fc-title">Repeat Event</span></div>
+                                                <div class="fc-resizer fc-end-resizer"></div>
+                                            </a>
+                                        </td>
+                                        <td></td>
+                                        <td class="fc-event-container">
+                                            <a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end bgm-green fc-draggable fc-resizable">
+                                                <div class="fc-content"> <span class="fc-title">Semester Exam</span></div>
+                                                <div class="fc-resizer fc-end-resizer"></div>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="fc-divider ui-widget-header">
+                    <div class="fc-time-grid-container fc-scroller" style="height: 758px;">
+                        <div class="fc-time-grid">
+                            <div class="fc-bg">
+                                <table>
+                                    <tbody>
+                                    <tr>
+                                        <td class="fc-axis ui-widget-content" style="width: 39px;"></td>
+                                        <td class="fc-day ui-widget-content fc-sun fc-past" data-date="2017-05-14"></td>
+                                        <td class="fc-day ui-widget-content fc-mon fc-past" data-date="2017-05-15"></td>
+                                        <td class="fc-day ui-widget-content fc-tue fc-past" data-date="2017-05-16"></td>
+                                        <td class="fc-day ui-widget-content fc-wed fc-past" data-date="2017-05-17"></td>
+                                        <td class="fc-day ui-widget-content fc-thu fc-past" data-date="2017-05-18"></td>
+                                        <td class="fc-day ui-widget-content fc-fri fc-today ui-state-highlight" data-date="2017-05-19"></td>
+                                        <td class="fc-day ui-widget-content fc-sat fc-future" data-date="2017-05-20"></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="fc-slats">
+                                <table>
+                                    <tbody>
+                                    <tr>
+                                        <td class="fc-axis fc-time ui-widget-content" style="width: 39px;"><span>12am</span></td>
+                                        <td class="ui-widget-content"></td>
+                                    </tr>
+                                    <tr class="fc-minor">
+                                        <td class="fc-axis fc-time ui-widget-content" style="width: 39px;"></td>
+                                        <td class="ui-widget-content"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fc-axis fc-time ui-widget-content" style="width: 39px;"><span>1am</span></td>
+                                        <td class="ui-widget-content"></td>
+                                    </tr>
+                                    <tr class="fc-minor">
+                                        <td class="fc-axis fc-time ui-widget-content" style="width: 39px;"></td>
+                                        <td class="ui-widget-content"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fc-axis fc-time ui-widget-content" style="width: 39px;"><span>2am</span></td>
+                                        <td class="ui-widget-content"></td>
+                                    </tr>
+                                    <tr class="fc-minor">
+                                        <td class="fc-axis fc-time ui-widget-content" style="width: 39px;"></td>
+                                        <td class="ui-widget-content"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fc-axis fc-time ui-widget-content" style="width: 39px;"><span>3am</span></td>
+                                        <td class="ui-widget-content"></td>
+                                    </tr>
+                                    <tr class="fc-minor">
+                                        <td class="fc-axis fc-time ui-widget-content" style="width: 39px;"></td>
+                                        <td class="ui-widget-content"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fc-axis fc-time ui-widget-content" style="width: 39px;"><span>4am</span></td>
+                                        <td class="ui-widget-content"></td>
+                                    </tr>
+                                    <tr class="fc-minor">
+                                        <td class="fc-axis fc-time ui-widget-content" style="width: 39px;"></td>
+                                        <td class="ui-widget-content"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fc-axis fc-time ui-widget-content" style="width: 39px;"><span>5am</span></td>
+                                        <td class="ui-widget-content"></td>
+                                    </tr>
+                                    <tr class="fc-minor">
+                                        <td class="fc-axis fc-time ui-widget-content" style="width: 39px;"></td>
+                                        <td class="ui-widget-content"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fc-axis fc-time ui-widget-content" style="width: 39px;"><span>6am</span></td>
+                                        <td class="ui-widget-content"></td>
+                                    </tr>
+                                    <tr class="fc-minor">
+                                        <td class="fc-axis fc-time ui-widget-content" style="width: 39px;"></td>
+                                        <td class="ui-widget-content"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fc-axis fc-time ui-widget-content" style="width: 39px;"><span>7am</span></td>
+                                        <td class="ui-widget-content"></td>
+                                    </tr>
+                                    <tr class="fc-minor">
+                                        <td class="fc-axis fc-time ui-widget-content" style="width: 39px;"></td>
+                                        <td class="ui-widget-content"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fc-axis fc-time ui-widget-content" style="width: 39px;"><span>8am</span></td>
+                                        <td class="ui-widget-content"></td>
+                                    </tr>
+                                    <tr class="fc-minor">
+                                        <td class="fc-axis fc-time ui-widget-content" style="width: 39px;"></td>
+                                        <td class="ui-widget-content"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fc-axis fc-time ui-widget-content" style="width: 39px;"><span>9am</span></td>
+                                        <td class="ui-widget-content"></td>
+                                    </tr>
+                                    <tr class="fc-minor">
+                                        <td class="fc-axis fc-time ui-widget-content" style="width: 39px;"></td>
+                                        <td class="ui-widget-content"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fc-axis fc-time ui-widget-content" style="width: 39px;"><span>10am</span></td>
+                                        <td class="ui-widget-content"></td>
+                                    </tr>
+                                    <tr class="fc-minor">
+                                        <td class="fc-axis fc-time ui-widget-content" style="width: 39px;"></td>
+                                        <td class="ui-widget-content"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fc-axis fc-time ui-widget-content" style="width: 39px;"><span>11am</span></td>
+                                        <td class="ui-widget-content"></td>
+                                    </tr>
+                                    <tr class="fc-minor">
+                                        <td class="fc-axis fc-time ui-widget-content" style="width: 39px;"></td>
+                                        <td class="ui-widget-content"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fc-axis fc-time ui-widget-content" style="width: 39px;"><span>12pm</span></td>
+                                        <td class="ui-widget-content"></td>
+                                    </tr>
+                                    <tr class="fc-minor">
+                                        <td class="fc-axis fc-time ui-widget-content" style="width: 39px;"></td>
+                                        <td class="ui-widget-content"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fc-axis fc-time ui-widget-content" style="width: 39px;"><span>1pm</span></td>
+                                        <td class="ui-widget-content"></td>
+                                    </tr>
+                                    <tr class="fc-minor">
+                                        <td class="fc-axis fc-time ui-widget-content" style="width: 39px;"></td>
+                                        <td class="ui-widget-content"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fc-axis fc-time ui-widget-content" style="width: 39px;"><span>2pm</span></td>
+                                        <td class="ui-widget-content"></td>
+                                    </tr>
+                                    <tr class="fc-minor">
+                                        <td class="fc-axis fc-time ui-widget-content" style="width: 39px;"></td>
+                                        <td class="ui-widget-content"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fc-axis fc-time ui-widget-content" style="width: 39px;"><span>3pm</span></td>
+                                        <td class="ui-widget-content"></td>
+                                    </tr>
+                                    <tr class="fc-minor">
+                                        <td class="fc-axis fc-time ui-widget-content" style="width: 39px;"></td>
+                                        <td class="ui-widget-content"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fc-axis fc-time ui-widget-content" style="width: 39px;"><span>4pm</span></td>
+                                        <td class="ui-widget-content"></td>
+                                    </tr>
+                                    <tr class="fc-minor">
+                                        <td class="fc-axis fc-time ui-widget-content" style="width: 39px;"></td>
+                                        <td class="ui-widget-content"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fc-axis fc-time ui-widget-content" style="width: 39px;"><span>5pm</span></td>
+                                        <td class="ui-widget-content"></td>
+                                    </tr>
+                                    <tr class="fc-minor">
+                                        <td class="fc-axis fc-time ui-widget-content" style="width: 39px;"></td>
+                                        <td class="ui-widget-content"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fc-axis fc-time ui-widget-content" style="width: 39px;"><span>6pm</span></td>
+                                        <td class="ui-widget-content"></td>
+                                    </tr>
+                                    <tr class="fc-minor">
+                                        <td class="fc-axis fc-time ui-widget-content" style="width: 39px;"></td>
+                                        <td class="ui-widget-content"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fc-axis fc-time ui-widget-content" style="width: 39px;"><span>7pm</span></td>
+                                        <td class="ui-widget-content"></td>
+                                    </tr>
+                                    <tr class="fc-minor">
+                                        <td class="fc-axis fc-time ui-widget-content" style="width: 39px;"></td>
+                                        <td class="ui-widget-content"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fc-axis fc-time ui-widget-content" style="width: 39px;"><span>8pm</span></td>
+                                        <td class="ui-widget-content"></td>
+                                    </tr>
+                                    <tr class="fc-minor">
+                                        <td class="fc-axis fc-time ui-widget-content" style="width: 39px;"></td>
+                                        <td class="ui-widget-content"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fc-axis fc-time ui-widget-content" style="width: 39px;"><span>9pm</span></td>
+                                        <td class="ui-widget-content"></td>
+                                    </tr>
+                                    <tr class="fc-minor">
+                                        <td class="fc-axis fc-time ui-widget-content" style="width: 39px;"></td>
+                                        <td class="ui-widget-content"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fc-axis fc-time ui-widget-content" style="width: 39px;"><span>10pm</span></td>
+                                        <td class="ui-widget-content"></td>
+                                    </tr>
+                                    <tr class="fc-minor">
+                                        <td class="fc-axis fc-time ui-widget-content" style="width: 39px;"></td>
+                                        <td class="ui-widget-content"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fc-axis fc-time ui-widget-content" style="width: 39px;"><span>11pm</span></td>
+                                        <td class="ui-widget-content"></td>
+                                    </tr>
+                                    <tr class="fc-minor">
+                                        <td class="fc-axis fc-time ui-widget-content" style="width: 39px;"></td>
+                                        <td class="ui-widget-content"></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <hr class="fc-divider ui-widget-header" style="display: none;">
+                            <div class="fc-content-skeleton">
+                                <table>
+                                    <tbody>
+                                    <tr>
+                                        <td class="fc-axis" style="width:39px"></td>
+                                        <td>
+                                            <div class="fc-event-container"></div>
+                                        </td>
+                                        <td>
+                                            <div class="fc-event-container"></div>
+                                        </td>
+                                        <td>
+                                            <div class="fc-event-container"></div>
+                                        </td>
+                                        <td>
+                                            <div class="fc-event-container"></div>
+                                        </td>
+                                        <td>
+                                            <div class="fc-event-container"></div>
+                                        </td>
+                                        <td>
+                                            <div class="fc-event-container"></div>
+                                        </td>
+                                        <td>
+                                            <div class="fc-event-container"></div>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 
-<h1>Timetables</h1>
+<%
+    weekdays = [
+        {en: 'mon', ko: '월'},
+        {en: 'tue', ko: '화'},
+        {en: 'wed', ko: '수'},
+        {en: 'thu', ko: '목'},
+        {en: 'fri', ko: '금'},
+        {en: 'sat', ko: '토'},
+        {en: 'sun', ko: '일'}]
+    weekdays.unshift({en: 'no-date',ko: '#'})
 
-<table>
-  <thead>
-    <tr>
-      <th>Group</th>
-      <th>Start date</th>
-      <th>End date</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    time_ranges = %w(12am) << ' '
+    (1..11).to_a.each do |i|
+        time_ranges << "#{i}am"
+        time_ranges << ' '
+    end
+    time_ranges << '12pm' << ' '
+    (1..11).to_a.each do |i|
+        time_ranges << "#{i}pm"
+        time_ranges << ' '
+    end
+%>
 
-  <tbody>
-    <% @timetables.each do |timetable| %>
-      <tr>
-        <td><%= timetable.group %></td>
-        <td><%= timetable.start_date %></td>
-        <td><%= timetable.end_date %></td>
-        <td><%= link_to 'Show', timetable %></td>
-        <td><%= link_to 'Edit', edit_timetable_path(timetable) %></td>
-        <td><%= link_to 'Destroy', timetable, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
+<section id="timetable">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h2 style="font-weight: bold;">심인혜님이 생성한 테이블<br>
+                    <small style="font-size: 14px; font-weight: bold; color: #777">단국대학교 집현전 해커톤 화이팅!</small>
+                </h2>
+            </div>
+            <div class="col-sm-6">
+                <!-- Single button -->
+                <div class="btn-group pull-right" style="margin-top: 30px;margin-bottom: 9px;">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        more <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu pull-right" role="menu">
+                        <li><a href="#">테이블 상세 설정</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li><a class="bgm-red" href="#" style="color: #FFFFFF;">테이블 삭제하기</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <table id="table" class="table table-bordered">
+                        <thead class="header">
+                        <tr>
+                            <th class="day day_head" style="padding: 0;">
+                                <a href="#" class="btn btn-default waves-effect" onclick="return false;">
+                                    <span class="zmdi zmdi-chevron-left"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <span class="zmdi zmdi-chevron-right"></span>
+                                </a>
+                            </th>
+                            <% today = Date.today %>
+                            <th class="day day_head" colspan="6"><%= today.strftime('%Y년 %m월') %> : <%= today.beginning_of_week.day %>일 ~ <%= today.end_of_week.day %>일</th>
+                            <th class="day day_head" style="padding: 0;">
+                                <select name="" id="" style="color: #000; font-size: 10px;">
+                                    <option value="0">하루 길이 설정</option>
+                                    <% i=0; time_ranges.each do |time| %>
+                                        <% i += 1 %>
+                                        <% next if time.length < 2 %>
+                                        <option value="<%= i %>"><%= time %></option>
+                                    <% end %>
+                                </select>
+                            </th>
+                        </tr>
+                        <tr>
+                            <% weekdays.each do |weekday| %>
+                                <th class="day day_head <%= weekday[:en] %>"><%= weekday[:ko] %></th>
+                            <% end %>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <% time_ranges.each do |time| %>
+                            <tr>
+                                <% weekdays.each do |weekday| %>
+                                    <td data-weekday="<%= weekday[:en] %>" class="day <%= weekday[:en] %> <%= 'time_cell' unless weekday[:en] == 'no-date' %>"><%== weekday[:ko] == '#' ? time : '&nbsp;' %></td>
+                                <% end %>
+                            </tr>
+                        <% end %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-4">
 
-<%= link_to 'New Timetable', new_timetable_path %>
+                <div class="card rating-list">
+                    <div class="listview">
+                        <div class="lv-header bgm-indigo">
+                            <div class="m-t-5" style="color: #FFFFFF; font-weight: bold;">
+                                되는 시간 ** 1위 **<br><br>2017-05-20 / 13:00 ~ 15:00<br><br>
+                            </div>
+
+                            <div class="clearfix"></div>
+
+                            <div class="rl-star">
+                                <span style="color: #FFFFFF;">4명</span>
+                                <i class="zmdi zmdi-star active"></i>
+                                <i class="zmdi zmdi-star active"></i>
+                                <i class="zmdi zmdi-star active"></i>
+                                <i class="zmdi zmdi-star active"></i>
+                                <i class="zmdi zmdi-star"></i>
+                                <span style="color: #FFFFFF;">총 5명</span>
+                            </div>
+                            <span style="color: #FFFFFF;">김용현, 심인혜, 김정범, 정동형</span>
+                            <br><br>
+                        </div>
+
+                        <div class="lv-body">
+                            <div class="p-15">
+                                <div class="lv-item">
+                                    <div class="media">
+                                        <div class="pull-left">
+                                            1위 <i class="zmdi zmdi-star"></i>
+                                        </div>
+
+                                        <div class="pull-right" style="font-weight: bold;">4명</div>
+
+                                        <div class="media-body">
+                                            <div class="progress">
+                                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="lv-item">
+                                    <div class="media">
+                                        <div class="pull-left">
+                                            2위 <i class="zmdi zmdi-star"></i>
+                                        </div>
+
+                                        <div class="pull-right" style="font-weight: bold;">3명</div>
+
+                                        <div class="media-body">
+                                            <div class="progress">
+                                                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="lv-item">
+                                    <div class="media">
+                                        <div class="pull-left">
+                                            3위 <i class="zmdi zmdi-star"></i>
+                                        </div>
+
+                                        <div class="pull-right" style="font-weight: bold;">2명</div>
+
+                                        <div class="media-body">
+                                            <div class="progress">
+                                                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="lv-item">
+                                    <div class="media">
+                                        <div class="pull-left">
+                                            4위 <i class="zmdi zmdi-star"></i>
+                                        </div>
+
+                                        <div class="pull-right" style="font-weight: bold;">1명</div>
+
+                                        <div class="media-body">
+                                            <div class="progress">
+                                                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="lv-item">
+                                    <div class="media">
+                                        <div class="pull-left">
+                                            4위 <i class="zmdi zmdi-star"></i>
+                                        </div>
+
+                                        <div class="pull-right" style="font-weight: bold;">1명</div>
+
+                                        <div class="media-body">
+                                            <div class="progress">
+                                                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header bgm-indigo">
+                        <h2>참여중인 사람
+                            <small>
+                                <span class="label label-success">심인혜</span>
+                                <span class="label label-warning">김용현</span>
+                                <span class="label label-success">김정범</span>
+                                <span class="label label-info">정동형</span>
+                                <span class="label label-danger">위상아</span>
+                            </small>
+                        </h2>
+                    </div>
+                    <!--<div class="card-body card-padding">-->
+                    <!---->
+                    <!--</div>-->
+                </div>
+
+                <div class="card">
+                    <div class="card-header bgm-indigo">
+                        <h2>테이블 초대 전용 코드
+                            <small>전용 코드를 통해 지인을 초대하세요<br>더욱 빠른 참여와 동시에, 개인정보의 유출을 방지할 수 있습니다</small>
+                        </h2>
+                    </div>
+                    <div class="card-body card-padding">
+                        <a id="code_g" href="#" class="btn btn-default bgm-pink w-100" onclick="return false;">전용 코드 발급 받기</a>
+                        <span id="code_m" style="display: none"><%= SecureRandom.hex(16) %> &nbsp;&nbsp;&nbsp;
+                            <a href="#" class="btn btn-default btn-sm bgm-red" onclick="return false;">숨겨두기</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<style>
+    #footer{
+        position: initial !important;
+    }
+</style>
+
+
+
+<!--
+<div style="display: none;">
+    <p id="notice"><%#= notice %></p>
+
+    <h1>Timetables</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Group</th>
+            <th>Start date</th>
+            <th>End date</th>
+            <th colspan="3"></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <%# @timetables.each do |timetable| %>
+            <tr>
+                <td><%#= timetable.group %></td>
+                <td><%#= timetable.start_date %></td>
+                <td><%#= timetable.end_date %></td>
+                <td><%#= link_to 'Show', timetable %></td>
+                <td><%#= link_to 'Edit', edit_timetable_path(timetable) %></td>
+                <td><%#= link_to 'Destroy', timetable, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+        <%# end %>
+        </tbody>
+    </table>
+
+    <br>
+
+    <%#= link_to 'New Timetable', new_timetable_path %>
+</div>
+-->

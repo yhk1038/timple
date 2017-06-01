@@ -1,42 +1,85 @@
-<%= form_for(group) do |f| %>
-  <% if group.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(group.errors.count, "error") %> prohibited this group from being saved:</h2>
+<div class="row">
+    <%= form_for(group) do |f| %>
+        <% if group.errors.any? %>
+            <div id="error_explanation">
+                <h2><%= pluralize(group.errors.count, "error") %> prohibited this group from being saved:</h2>
 
-      <ul>
-      <% group.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+                <ul>
+                    <% group.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                    <% end %>
+                </ul>
+            </div>
+        <% end %>
+        <div class="col-sm-4">
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
+            <div class="fileinput fileinput-new" data-provides="fileinput">
+                <div class="fileinput-preview thumbnail" data-trigger="fileinput"></div>
+                <div>
+                    <span class="btn btn-info btn-file no-waves">
+                        <span class="fileinput-new">Select image</span>
+                        <span class="fileinput-exists">Change</span>
+                        <%= f.file_field :profile_img %>
+                    </span>
+                    <a href="#" class="btn btn-danger fileinput-exists no-waves" data-dismiss="fileinput">
+                        <span class="zmdi zmdi-close"></span>
+                    </a>
+                </div>
+            </div>
 
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_field :description %>
-  </div>
+            <!--
+            <div class="field form-group fg-float" style="margin-top: 100px">
+                <div class="fg-line">
+                    <%#= f.text_field :background_img, class: 'form-control fg-input' %>
+                    <%#= f.label :background_img, class: 'fg-label' %>
+                </div>
+            </div>
+            -->
+        </div>
 
-  <div class="field">
-    <%= f.label :profile_img %>
-    <%= f.text_field :profile_img %>
-  </div>
+        <div class="col-sm-8 profile-group">
 
-  <div class="field">
-    <%= f.label :background_img %>
-    <%= f.text_field :background_img %>
-  </div>
+            <div class="field form-group fg-float">
+                <div class="fg-line">
+                    <%= f.text_field :name, class: 'form-control fg-input', value: "#{current_user.name}님의 #{current_user.groups.count + 1}번째 그룹" %>
+                    <%= f.label :name, class: 'fg-label' %>
+                </div>
+            </div>
 
-  <div class="field">
-    <%= f.label :invite_code %>
-    <%= f.text_field :invite_code %>
-  </div>
+            <div class="field form-group fg-float">
+                <div class="fg-line">
+                    <%= f.text_field :description, class: 'form-control fg-input' %>
+                    <%= f.label :description, class: 'fg-label' %>
+                </div>
+            </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+            <div class="row">
+                <div id="private-announcer" class="col-xs-12" style="display: none;">
+                    <div class="alert alert-danger" role="alert">잠깐! <b>비공개 그룹</b> 선택하셨네요!
+                        <br><b>무료로 10개</b> 까지 만들 수 있다는 점에 주의하세요!
+                        <a href="#" class="btn btn-default btn-xs pull-right" style="position: relative; top: -2px; right: -10px;">프리미엄 알아보기</a>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <label class="radio radio-inline m-r-20 text-uppercase" id="private-labeled">
+                        <%= f.radio_button :privated, :true %>
+                        <i class="input-helper"></i>
+                        <p>비공개 그룹 <small>기존 멤버 혹은 초대받은 경우에만 열람할 수 있습니다.</small></p>
+                    </label>
+                </div>
+                <div class="col-xs-6">
+                    <label class="radio radio-inline m-r-20 text-uppercase" id="public-labeled">
+                        <%= f.radio_button :privated, :false, checked: 'checked' %>
+                        <i class="input-helper"></i>
+                        <p>공개그룹 <small>누구든지 그룹을 열람할 수 있습니다.</small></p>
+                    </label>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-sm-12 actions">
+            <%= f.submit '시작하기' %>
+        </div>
+    <% end %>
+</div>

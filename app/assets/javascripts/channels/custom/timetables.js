@@ -1,5 +1,8 @@
 $(document).ready(function () {
     console.log('loaded!');
+
+    //
+    // 초대 코드 토글 장치
     $('#code_g').click(function () {
         $(this).hide();
         $('#code_m').fadeIn();
@@ -9,8 +12,11 @@ $(document).ready(function () {
         $('#code_g').fadeIn();
     });
 
+    /*
+     * 타임 테이블 마킹 컨트롤
+     */
     $('.time_cell').mousedown(function () {
-        console.log($(this).attr('id'));
+        console.log($(this).data('weekday'));
 
         // 드래그를 시작한 첫 번째 셀을 통제하고,
         // 무슨 요일의 시간을 긁고 있는지 알아낸다.
@@ -22,7 +28,12 @@ $(document).ready(function () {
         // 드래그 시작점을 이탈하고,
         // 드래그를 지속하는 단계를 통제한다.
         $('.time_cell.'+weekday()).mouseenter(function () {
-            enter_cell($(this));
+
+            // enter_cell($(this));
+            if ($('#table').attr('class').indexOf('edit-mode') !== -1) {
+                $(this).addClass('active');
+                countPlus($(this), $(this).val());
+            }
         });
     });
 
@@ -46,11 +57,11 @@ function first_pressed(cell) {
 
 function table_edit_mode(mode) {
     if (mode === true) {
-        $('#table').attr('data-mode', 'edit-mode');
+        $('#table').addClass('edit-mode');
     }
 
     if (mode === false) {
-        $('#table').attr('data-mode', '');
+        $('#table').removeClass('edit-mode');
         weekday_ = 'stop';
     }
 }

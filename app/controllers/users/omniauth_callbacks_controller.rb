@@ -1,5 +1,5 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-    before_action :set_user, only: [:twitter, :facebook, :google_oauth2]
+    before_action :set_user, only: [:twitter, :facebook, :google_oauth2, :kakao]
     
     # You should configure your model like this:
     # devise :omniauthable, omniauth_providers: [:twitter]
@@ -50,6 +50,22 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
             end
         else
             session["devise.google_oauth2_data"] = request.env["omniauth.auth"]
+            redirect_to new_user_registration_url
+        end
+    end
+
+    def kakao
+        if @user.persisted?
+            if @user.active
+                sign_in_and_redirect @user, :event => :authentication #this will throw if @user is not activated
+                set_flash_message(:notice, :success, :kind => "Kakao") if is_navigational_format?
+            else
+                @user.update(active: true)
+                sign_in_and_redirect @user, :event => :authentication #this will throw if @user is not activated
+                set_flash_message(:notice, :success, :kind => "Kakao") if is_navigational_format?
+            end
+        else
+            session["devise.kakao_data"] = request.env["omniauth.auth"]
             redirect_to new_user_registration_url
         end
     end

@@ -18,25 +18,24 @@ class User < ApplicationRecord
 
     TEMP_EMAIL_PREFIX = 'change@me'
     TEMP_EMAIL_REGEX = /\Achange@me/
-    TEMP_EMAIL_HEREFAN = '@herefan.com'
+    TEMP_EMAIL_TIMPLE = '@timple.com'
 
     validates_presence_of :name
     validates_format_of :email, :without => TEMP_EMAIL_REGEX, on: :update
 
-    ## DEVISE OFFICAIL GUIDE
+    ## DEVISE OFFICIAL GUIDE
     def self.from_omniauth(auth)
         u = where(provider: auth.provider, uid: auth.uid).first
         if u.nil?
             u = User.create do |user|
                 email = auth.info.email
-                user.email = email ? email : auth.info.name.gsub(' ','_') + TEMP_EMAIL_HEREFAN
+                user.email = email ? email : auth.info.name.gsub(' ','_') + TEMP_EMAIL_TIMPLE
                 user.password   = user.email
                 user.provider   = auth.provider
                 user.uid        = auth.uid
                 user.name       = auth.info.name  # assuming the user model has a name
                 user.image      = auth.info.image # assuming the user model has an image
                 user.img        = auth.info.image
-            
                 user.nickname   = user.name
                 # If you are using confirmable and the provider(s) you use validate emails,
                 # uncomment the line below to skip the confirmation emails.
@@ -109,7 +108,7 @@ class User < ApplicationRecord
                             user_params[:password] = user_params[:current_password]
                         end
                     end
-                
+
                     if key.to_s == 'image'
                         self.update(img: nil)
                     end

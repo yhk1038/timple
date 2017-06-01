@@ -5,7 +5,7 @@ class GroupsController < ApplicationController
     # GET /groups.json
     def index
         redirect_to root_path unless user_signed_in?
-        @groups = current_user.groups # Group.all
+        @groups = current_user.groups.order(created_at: :desc) # Group.all
     end
     
     # GET /groups/1
@@ -27,9 +27,21 @@ class GroupsController < ApplicationController
     def create
         @group = Group.new(group_params)
         
+        Userlist.create(user: current_user, group: @group)
+        
+        current_date = DateTime.now
+        beginning_of_current_week = current_date.beginning_of_week
+        end_of_current_week = current_date.end_of_week
+        
+        @timetable = Timetable.create(group:   @group,
+                                      start_date:       beginning_of_current_week,
+                                      end_date:         end_of_current_week,
+                                      start_day_time:   DateTime.new(current_date.year, current_date.month, current_date.day, 06,00),
+                                      end_day_time:     DateTime.new(current_date.year, current_date.month, current_date.day, 24,00))
+        
         respond_to do |format|
             if @group.save
-                format.html { redirect_to @group, notice: 'Group was successfully created.' }
+                format.html { redirect_to group_timetable_path(@group, @timetable), notice: 'Group was successfully created.' }
                 format.json { render :show, status: :created, location: @group }
             else
                 format.html { render :new }
@@ -70,6 +82,6 @@ class GroupsController < ApplicationController
     
     # Never trust parameters from the scary internet, only allow the white list through.
     def group_params
-        params.require(:group).permit(:name, :description, :profile_img, :background_img, :invite_code)
+        params.require(:group).permit(:name, :description, :profile_img, :background_img, :invite_code, :privated)
     end
 end

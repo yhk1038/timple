@@ -278,7 +278,7 @@ ul li {
     background-repeat: no-repeat;
     background-position: left 8px;
     background-size: 92px;
-    background-image: url("../img/logo-new3.svg"); }
+    background-image: url("/landing/img/logo-new3.svg"); }
 
 .intro {
     position: relative;
@@ -286,7 +286,7 @@ ul li {
     padding: 80px 40px;
     height: 140vh;
     min-height: 800px;
-    background-image: url("../img/bg-iso10.png");
+    background-image: url("/landing/img/bg-iso10.png");
     background-size: 100px auto;
     min-width: 1040px; }
 .intro .content {

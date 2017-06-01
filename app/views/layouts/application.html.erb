@@ -29,9 +29,9 @@
 </head>
 
 <body>
-<div style="display: none;">
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+<div class="flash-message">
+    <p class="notice <%= 'open' if notice %>"><%= notice %></p>
+    <p class="alert <%= 'open' if alert %>"><%= alert %></p>
 </div>
 
 <%= render '/layouts/parts/navbar' %>
@@ -58,8 +58,16 @@
 
 <%= javascript_include_tag 'application' %>
 
+<script src="/template/vendors/fileinput/fileinput.min.js"></script>
+
 <script src="/template/js/functions.js"></script>
 <script src="/template/js/demo.js"></script>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(function () {
+        $('.no-waves').removeClass('waves-effect');
+    });
+</script>
 
 </body>
 </html>

@@ -1,5 +1,39 @@
-<h1>New Group</h1>
+<section id="main">
+    <section id="content">
+        <div class="container">
+            <div class="block-header text-center">
+                <h1 class="bareundotum ff-dd-w500">그룹 생성</h1>
+            </div>
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8">
+                    <div class="card">
+                        <div class="card-header bgm-3">
+                            <h2> <small> </small></h2>
 
-<%= render 'form', group: @group %>
+                            <ul class="actions">
+                                <li class="dropdown action-show">
+                                    <a href="" data-toggle="dropdown">
+                                        <i class="zmdi zmdi-more-vert"></i>
+                                    </a>
 
-<%= link_to 'Back', groups_path %>
+                                    <div class="dropdown-menu pull-right">
+                                        <p class="p-20">
+                                            You can put anything here
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-body card-padding" style="padding: 23px 60px;">
+                            <%= render 'form', group: @group %>
+
+                            <%= link_to '돌아가기', groups_path %>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+        </div>
+    </section>
+</section>

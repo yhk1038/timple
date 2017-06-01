@@ -3,42 +3,46 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #timetable{
-  margin: 100px 0;
-
-  #table{
-    width: 100%;
-    border: 1px solid #f0f0f0;
-
-    .day_head{
-      background: #3F51B5;
-      color: #FFFFFF;
-      text-align: center;
-    }
-    .day{
-      width: 85px !important;
-    }
-
-    tbody{
-
-      tr{
-
-        td{
-          font-size: 11px;
-          text-align: center;
-          padding: 2px 6px;
-
-          &.time_cell{
-            cursor: pointer;
-
-            &:hover,
-            &.active{
-              background: rgba(63, 81, 181, 0.1);
-            }
-          }
+    margin: 100px 0;
+    
+    #table{
+        width: 100%;
+        border: 1px solid #f0f0f0;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        
+        .day_head{
+            background: #3F51B5;
+            color: #FFFFFF;
+            text-align: center;
         }
-
-      }
-
+        .day{
+            width: 85px !important;
+        }
+        
+        tbody{
+            
+            tr{
+                
+                td{
+                    font-size: 11px;
+                    text-align: center;
+                    padding: 2px 6px;
+                    
+                    &.time_cell{
+                        cursor: pointer;
+                        
+                        &:hover,
+                        &.active{
+                            background: rgba(63, 81, 181, 0.1);
+                        }
+                    }
+                }
+                
+            }
+            
+        }
     }
-  }
 }

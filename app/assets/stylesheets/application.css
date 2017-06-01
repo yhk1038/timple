@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
 
 html,
 body {
@@ -70,10 +71,14 @@ body {
     background: #6293df !important;
 }
 
+#header .logo{
+    margin-left: -20px;
+}
 
 
-
-
+.clear-nav{
+    margin-top: 78px;
+}
 
 
 
@@ -1097,4 +1102,76 @@ div.super.row:before{
     small.linkcard-description {
         display: none;
     }
+}
+
+
+/*
+ * Web Font
+ */
+
+@font-face {
+    font-family: 'BareunDotum';
+    font-style: normal;
+    font-weight: 400;
+    src: url('//cdn.jsdelivr.net/korean-webfonts/1/orgs/othrs/kpa/BareunDotum/BareunDotumOTFPro2.woff2') format('woff2'), url('//cdn.jsdelivr.net/korean-webfonts/1/orgs/othrs/kpa/BareunDotum/BareunDotumOTFPro2.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'BareunDotum';
+    font-style: normal;
+    font-weight: 700;
+    src: url('//cdn.jsdelivr.net/korean-webfonts/1/orgs/othrs/kpa/BareunDotum/BareunDotumOTFPro3.woff2') format('woff2'), url('//cdn.jsdelivr.net/korean-webfonts/1/orgs/othrs/kpa/BareunDotum/BareunDotumOTFPro3.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'BareunDotum';
+    font-style: normal;
+    font-weight: 300;
+    src: url('//cdn.jsdelivr.net/korean-webfonts/1/orgs/othrs/kpa/BareunDotum/BareunDotumOTFPro1.woff2') format('woff2'), url('//cdn.jsdelivr.net/korean-webfonts/1/orgs/othrs/kpa/BareunDotum/BareunDotumOTFPro1.woff') format('woff');
+}
+
+.bareundotum {
+    font-family: 'BareunDotum', sans-serif;
+}
+
+/** 이하는 공통 **/
+.normal {
+    font-style: normal;
+}
+
+.ff-dd-w250 {
+    font-weight: 250;
+}
+
+.ff-dd-w300 {
+    font-weight: 300;
+}
+
+.ff-dd-w350 {
+    font-weight: 350;
+}
+
+.ff-dd-w400 {
+    font-weight: 400;
+}
+
+.ff-dd-w500 {
+    font-weight: 500;
+}
+
+.ff-dd-w700 {
+    font-weight: 700;
+}
+
+.ff-dd-w800 {
+    font-weight: 800;
+}
+
+.ff-dd-w900 {
+    font-weight: 900;
+}
+
+li span {
+    line-height: 1.8;
+    font-size: 1.3em;
 }

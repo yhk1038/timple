@@ -7,6 +7,7 @@ Rails.application.routes.draw do
             passwords: 'users/passwords',
             omniauth_callbacks: 'users/omniauth_callbacks'
     }
+    match '/oauth', to: 'users/omniauth_callbacks#kakao', via: [:get, :post, :put, :delete]
     
     root 'util#balancer'
     get '/landing', to: 'util#landing', as: 'landing'

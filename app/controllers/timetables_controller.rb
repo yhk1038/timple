@@ -14,6 +14,10 @@ class TimetablesController < ApplicationController
     # GET /timetables/1
     # GET /timetables/1.json
     def show
+        @group          = @timetable.group
+        @timetables     = @group.timetables
+        @users          = @group.users
+        @marked_users   = @timetable.marks.where(user: @users).distinct
     end
     
     # GET /timetables/new
