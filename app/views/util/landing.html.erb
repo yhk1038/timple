@@ -7,17 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Timple | 약속을 공유하는 가장 쉬운 방법</title>
-    <meta name="author" content="XBrain">
+    <meta name="author" content="TimPle">
     <meta name="description" content="">
 
     <link rel="stylesheet" href="/landing/style.css">
 
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
-
+    <%= stylesheet_link_tag    'application', media: 'all' %>
 </head>
 <body>
 
-
+<div class="flash-message" style="top: 90px; right: 30px; left: initial">
+    <p class="notice <%= 'open' if notice %>" style="background: #1FD331"><%= notice %></p>
+    <p class="alert <%= 'open' if alert %>" style="background: #1FD331"><%= alert %></p>
+</div>
 
 <div class="view">
 
@@ -272,7 +275,7 @@
 <!--<script>window.jQuery || document.write('<script src="js/lib/jquery-2.1.4.min.js"><\/script>')</script>-->
 <script type="text/javascript" src="/landing/d3.min.js"></script>
 <script src="/landing/main.js"></script>
-
+<%= javascript_include_tag 'application' %>
 
 <!-- Google Analytics -->
 <!--

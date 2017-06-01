@@ -278,7 +278,7 @@ ul li {
     background-repeat: no-repeat;
     background-position: left 8px;
     background-size: 92px;
-    background-image: url("/landing/img/logo-new3.svg"); }
+    background-image: url("/img/logo-white.png"); }
 
 .intro {
     position: relative;
@@ -650,12 +650,12 @@ ul li {
     background-image: url("/img/team/kimjeongbum.jpeg"); }
 .team .donghyung-jeong {
     background-image: url("/img/team/jeongdonghyung.jpeg"); }
-.team .donghyung-jeong .img {
-    background-image: url("/img/team/jeongdonghyung.jpeg"); }
-.team .daehyun-kim {
-    background-image: url("../img/team/daehyun-kim.png"); }
-.team .daehyun-kim .img {
-    background-image: url("../img/team/daehyun-kim-ds.png"); }
+/*.team .donghyung-jeong .img {*/
+    /*background-image: url("/img/team/jeongdonghyung.jpeg"); }*/
+/*.team .daehyun-kim {*/
+    /*background-image: url("../img/team/daehyun-kim.png"); }*/
+/*.team .daehyun-kim .img {*/
+    /*background-image: url("../img/team/daehyun-kim-ds.png"); }*/
 .team .bg-white {
     position: absolute;
     top: -1px;
@@ -727,7 +727,7 @@ ul li {
     background-repeat: no-repeat;
     background-position: left 2px;
     background-size: 70px;
-    background-image: url("../img/logo-new3.svg"); }
+    background-image: url("../img/logo-white.png"); }
 .footer .copyright {
     font-size: 12px;
     line-height: 20px;

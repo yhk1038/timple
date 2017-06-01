@@ -1,16 +1,29 @@
 .flash-message{
-    position: absolute;
-    top: 50px;
-    right: 2%;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    max-width: 30%;
+    margin: 0 auto;
+    text-align: center;
+    z-index: 12;
+    display: none;
     
-    p.open{
-        opacity: 1;
-        margin: 0;
-        padding: 12px 24px;
-        background: #f19090;
-        color: #fff;
-        border-radius: 2px;
-        box-shadow: 1px 1px 5px #9d9d9d;
-        font-weight: bold;
+    p{
+        //-webkit-transition: all 800ms cubic-bezier(0.5, -0.8, 0.5, 1.8);
+        //-moz-transition: all 800ms cubic-bezier(0.5, -0.8, 0.5, 1.8);
+        //-ms-transition: all 800ms cubic-bezier(0.5, -0.8, 0.5, 1.8);
+        //-o-transition: all 800ms cubic-bezier(0.5, -0.8, 0.5, 1.8);
+        //transition: all 800ms cubic-bezier(0.5, -0.8, 0.5, 1.8);
+        
+        &.open{
+            margin: 0;
+            padding: 12px 24px;
+            background: #f19090;
+            color: #fafafa;
+            border-radius: 2px;
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+            font-weight: bold;
+        }
     }
 }

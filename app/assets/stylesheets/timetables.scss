@@ -36,7 +36,12 @@
                         
                         &:hover,
                         &.active{
-                            background: rgba(63, 81, 181, 0.1);
+                            background: rgba(241, 144, 144, 0.5);
+                            color: #f9f9f9;
+                        }
+                        
+                        &:hover{
+                            box-shadow: 1px 1px 5px #9a9a9a;
                         }
                     }
                 }

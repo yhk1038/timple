@@ -29,19 +29,19 @@ class GroupsController < ApplicationController
         
         Userlist.create(user: current_user, group: @group)
         
-        current_date = DateTime.now
+        current_date = Time.new
         beginning_of_current_week = current_date.beginning_of_week
         end_of_current_week = current_date.end_of_week
         
         @timetable = Timetable.create(group:   @group,
                                       start_date:       beginning_of_current_week,
                                       end_date:         end_of_current_week,
-                                      start_day_time:   DateTime.new(current_date.year, current_date.month, current_date.day, 06,00),
-                                      end_day_time:     DateTime.new(current_date.year, current_date.month, current_date.day, 24,00))
+                                      start_day_time:   Time.new(current_date.year, current_date.month, current_date.day, 6, 0),
+                                      end_day_time:     Time.new(current_date.year, current_date.month, current_date.day, 22, 59))
         
         respond_to do |format|
             if @group.save
-                format.html { redirect_to group_timetable_path(@group, @timetable), notice: 'Group was successfully created.' }
+                format.html { redirect_to group_timetable_path(@group, @timetable), notice: "'#{@group.name}' 의 테이블 입니다.<br>시간 입력할 준비, 되셨나요?" }
                 format.json { render :show, status: :created, location: @group }
             else
                 format.html { render :new }

@@ -30,8 +30,8 @@
 
 <body>
 <div class="flash-message">
-    <p class="notice <%= 'open' if notice %>"><%= notice %></p>
-    <p class="alert <%= 'open' if alert %>"><%= alert %></p>
+    <p class="notice <%= 'open' if notice %>"><%== notice %></p>
+    <p class="alert <%= 'open' if alert %>"><%== alert %></p>
 </div>
 
 <%= render '/layouts/parts/navbar' %>

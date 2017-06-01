@@ -14,3 +14,9 @@
 //= require jquery_ujs
 // require turbolinks
 //= require_tree .
+$(window).load(function () {
+    if($('.flash-message p.open').text().length !== 0){
+       window.setTimeout("$('.flash-message').fadeIn(800);", 400);
+       window.setTimeout("$('.flash-message').fadeOut(800);", 6600);
+    }
+});
