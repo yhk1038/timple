@@ -15,5 +15,7 @@ module Timple1
         # -- all .rb files in that directory are automatically loaded.
         
         config.time_zone = 'Seoul'
+
+        config.autoload_paths += %W(#{config.root}/lib)
     end
 end

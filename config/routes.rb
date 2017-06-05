@@ -12,7 +12,9 @@ Rails.application.routes.draw do
     root 'util#balancer'
     get '/landing', to: 'util#landing', as: 'landing'
     get 'util/index', to: 'util#index', as: 'intro'
+    get '/vt(/:table_key)', to: 'util#mvp_v1', as: 'sample'
     get 'timetable/intro', to: 'timetables#intro', as: 'table'
+    get 'intro2', to: 'timetables#intro2'
 
     resources :groups do
         resources :timetables

@@ -15,4 +15,8 @@ class UtilController < ApplicationController
     def landing
         render layout: false
     end
+    
+    def mvp_v1
+        @table_name = params[:table_key] || 'sample'
+    end
 end

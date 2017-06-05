@@ -38,5 +38,9 @@
 <%= render '/layouts/footer' %>
 
 <%= javascript_include_tag 'application' %>
+
+<% if params[:action] == 'mvp_v1' %>
+    <%= render '/util/mvpJs' %>
+<% end %>
 </body>
 </html>

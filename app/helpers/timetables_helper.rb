@@ -4,6 +4,31 @@ module TimetablesHelper
         private_group ? private_label_format : public_label_format
     end
     
+    def generate_timetable
+        weekdays = [
+                {en: 'mon', ko: '월'},
+                {en: 'tue', ko: '화'},
+                {en: 'wed', ko: '수'},
+                {en: 'thu', ko: '목'},
+                {en: 'fri', ko: '금'},
+                {en: 'sat', ko: '토'},
+                {en: 'sun', ko: '일'}]
+        weekdays.unshift({en: 'no-date',ko: '#'})
+    
+        time_ranges = %w(12am) << ' '
+        (1..11).to_a.each do |i|
+            time_ranges << "#{i}am"
+            time_ranges << ' '
+        end
+        time_ranges << '12pm' << ' '
+        (1..11).to_a.each do |i|
+            time_ranges << "#{i}pm"
+            time_ranges << ' '
+        end
+        
+        
+    end
+    
     
     ########
     #

@@ -1,0 +1,34 @@
+#timetable2{
+    margin-top: 80px;
+
+    .fc-toolbar{
+        background: #365c89;
+
+        .fc-center{
+            button,
+            h2{
+                float: left;
+
+                &.fc-prev-button{
+                    margin-right: 15px;
+                }
+                &.fc-next-button{
+                    margin-left: 15px;
+                }
+            }
+        }
+    }
+
+    .fc-day-header{
+        color: #ADADAD;
+        text-align: left;
+        font-size: 14px;
+        border-bottom-width: 0;
+        border-right-color: #eee;
+        padding: 10px 12px;
+    }
+
+    .fc-view.fc-agenda-view{
+        user-select: none !important;
+    }
+}
